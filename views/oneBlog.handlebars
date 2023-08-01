@@ -1,0 +1,19 @@
+<div class="p-4">
+    <div class="p-2 p-md-2 mb-4 text-info rounded bg-secondary">
+        <div class="col-md-6 px-0">
+            <p class="display-6 text-info">{{oneBlogData.post_title}}</p>
+        </div>
+    </div>
+
+    <p class="fs-5">
+        {{oneBlogData.post_contents}}
+    <p class="fs-8">
+        Created on: {{dateFormat oneBlogData.createdAt "MM/DD/YYYY (h:mm a)"}} By user: {{oneBlogData.user.name}}
+    </p>
+    {{#each oneBlogData.comments}}
+    <p class="fs-5">
+        "{{this.comment}}" said user {{this.user.name}}
+    </p>
+    {{/each}}
+    </p>
+</div>

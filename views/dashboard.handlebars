@@ -1,0 +1,40 @@
+<section class="vh-100 ">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="card bg-secondary text-info" style="border-radius: 1rem;">
+                    <div class="card-body text-center">
+                        <div>
+                            <p class="h2 text-info">Create New Post</p>
+                            <p class="text-white-50 mb-5">Please enter your post information.</p>
+                            <div class="form-outline form-white mb-4">
+                                <input type="text" id="post-title" class="form-control form-control-lg " />
+                                <label class="form-label" for="post-title">Title</label>
+                            </div>
+                            <div class="form-outline form-white mb-4">
+                                <textarea class="form-control" id="post-text" rows="2"></textarea>
+                                <label class="form-label" for="post-text">Post Text</label>
+                            </div>
+                            <button id="postBtn" class="postBtn btn btn-outline-info btn-lg px-5" type="submit">Post
+                                it!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <section>
+                    <p class="h2 text-info">Your Previous Posts</p>
+                    {{#each blogs}}
+                    <a href="/dashboard/post/{{this.id}}"
+                        class=" h3 blog-post-title fs-4 text-decoration-none">{{this.post_title}}</a>
+                    <div class="fs-6">
+                        <p class="blog-post-meta text-info">Posted on {{dateFormat this.createdAt "MM/DD/YYYY (h:mm
+                            a)"}}
+                    </div>
+                    {{/each}}
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/newPost.js"></script>
+</section>
